@@ -4,6 +4,7 @@ plugins {
 	kotlin("jvm") version "1.9.25" // 추가
 	kotlin("plugin.spring") version "1.9.25" // 추가
 	kotlin("plugin.jpa") version "1.9.25"
+	kotlin("kapt") version "1.9.25"
 }
 
 group = "com.example"
@@ -59,9 +60,7 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
 	implementation("com.querydsl:querydsl-jpa:5.1.0:jakarta")
-	annotationProcessor("com.querydsl:querydsl-apt:5.1.0:jakarta")
-	annotationProcessor("jakarta.annotation:jakarta.annotation-api")
-	annotationProcessor("jakarta.persistence:jakarta.persistence-api")
+	kapt("com.querydsl:querydsl-apt:5.1.0:jakarta")
 
 	testCompileOnly("org.projectlombok:lombok")
 	testAnnotationProcessor("org.projectlombok:lombok")
