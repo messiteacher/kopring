@@ -157,12 +157,11 @@ public class Post extends BaseTime {
 
     public Comment addComment(Member author, String content) {
 
-        Comment comment = Comment
-                .builder()
-                .post(this)
-                .author(author)
-                .content(content)
-                .build();
+        Comment comment = new Comment(
+                this,
+                author,
+                content
+        );
 
         comments.add(comment);
 
