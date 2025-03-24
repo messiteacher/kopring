@@ -79,4 +79,4 @@ custom:
   jwt:
     expire-seconds: "#{5}"
   genFile:
-    dirPath: c:/temp/glog_dev
+    dirPath: /Users/shinyounho/Desktop/Code/programmers/kotlin
