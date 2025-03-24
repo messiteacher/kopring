@@ -3,6 +3,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.7"
 	kotlin("jvm") version "1.9.25" // 추가
 	kotlin("plugin.spring") version "1.9.25" // 추가
+	kotlin("plugin.jpa") version "1.9.25"
 }
 
 group = "com.example"
@@ -12,6 +13,18 @@ java {
 	toolchain {
 		languageVersion.set(JavaLanguageVersion.of(17))
 	}
+}
+
+kotlin {
+	compilerOptions {
+		freeCompilerArgs.addAll("-Xjsr305=strict")
+	}
+}
+
+allOpen {
+	annotation("jakarta.persistence.Entity")
+	annotation("jakarta.persistence.MappedSuperclass")
+	annotation("jakarta.persistence.Embeddable")
 }
 
 configurations {
