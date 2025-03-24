@@ -55,11 +55,10 @@ dependencies {
 
 	implementation("org.apache.tika:tika-core:3.0.0")
 
-//	implementation("com.twelvemonkeys.imageio:imageio-core:3.8.1")
-//	implementation("com.twelvemonkeys.imageio:imageio-jpeg:3.8.1")
-//	implementation("com.twelvemonkeys.imageio:imageio-png:3.8.1")
-//	implementation("com.twelvemonkeys.imageio:imageio-gif:3.8.1")
-//	implementation("com.twelvemonkeys.imageio:imageio-webp:3.8.1")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+	testImplementation("org.jetbrain.kotlin:kotlin-test-junit5")
 }
 
 tasks.test {
