@@ -23,7 +23,7 @@ class PostGenFile : GenFile {
         yyyyMmDd: String, fileExtTypeCode: String, fileExtType2Code: String, fileExt: String,
         fileName: String, fileSize: Long
     ) : super(
-        fileNo, originalFileName, metadataStr, yyyyMmDd, fileExtTypeCode, fileExtType2Code, fileExt,
+        fileNo, originalFileName, metadataStr, yyyyMmDd, fileExt, fileExtTypeCode, fileExtType2Code,
         fileName, fileSize
     ) {
         this.post = post
