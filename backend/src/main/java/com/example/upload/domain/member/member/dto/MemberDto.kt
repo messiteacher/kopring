@@ -13,7 +13,7 @@ class MemberDto(
 
     constructor(member: Member): this(
 
-        id = member.id!!,
+        id = member.id,
         nickname = member.nickname,
         profileImgUrl = member.profileImgUrlOrDefault
     )

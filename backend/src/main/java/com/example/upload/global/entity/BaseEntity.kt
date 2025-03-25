@@ -11,7 +11,13 @@ import jakarta.persistence.MappedSuperclass
 abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long? = null // TODO: 추후에 코틀린 전환 과정에서 해결
+    private var _id: Long? = null // TODO: 추후에 코틀린 전환 과정에서 해결
+
+    var id: Long
+        get() = _id ?: 0
+        set(value) {
+            _id = value
+        }
 
     override fun equals(other: Any?): Boolean {
 

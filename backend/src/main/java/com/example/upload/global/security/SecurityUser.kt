@@ -16,7 +16,7 @@ class SecurityUser(
     User(username, password, authorities), OAuth2User {
 
     constructor(member: Member) : this(
-        member.id!!,
+        member.id,
         member.username,
         member.password,
         member.nickname,
