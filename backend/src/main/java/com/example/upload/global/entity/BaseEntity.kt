@@ -1,16 +1,14 @@
 package com.example.upload.global.entity;
 
 import com.example.upload.standard.util.Ut
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.MappedSuperclass
+import jakarta.persistence.*
 
 
 @MappedSuperclass
 abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private var _id: Long? = null // TODO: 추후에 코틀린 전환 과정에서 해결
 
     var id: Long
@@ -32,5 +30,5 @@ abstract class BaseEntity {
     }
 
     val modelName: String
-        get() = Ut.str.lcfirst(this::class.simpleName)
+        get() = Ut.str.lcfirst(this::class.simpleName!!)
 }

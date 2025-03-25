@@ -74,8 +74,11 @@ public class AppConfig {
         return System.getProperty("java.io.tmpdir");
     }
 
-    @Getter
     private static Tika tika;
+
+    public static Tika getTika() {
+        return tika;
+    }
 
     @Autowired
     public void setTika(Tika tika) {
