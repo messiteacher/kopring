@@ -10,10 +10,9 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@RequiredArgsConstructor
-public class ResponseAspect {
-
-    private final HttpServletResponse response;
+class ResponseAspect(
+    private val response: HttpServletResponse
+) {
 
     @Around("""
             (
@@ -35,15 +34,15 @@ public class ResponseAspect {
             ||
             @annotation(org.springframework.web.bind.annotation.ResponseBody)
             """)
-    public Object responseAspect(ProceedingJoinPoint joinPoint) throws Throwable {
-        Object rst = joinPoint.proceed(); // 실제 수행 메서드
+    fun responseAspect(joinPoint: ProceedingJoinPoint): Any {
+        val rst = joinPoint.proceed(); // 실제 수행 메서드
 
-        if(rst instanceof RsData rsData) {
-            int statusCode = rsData.getStatusCode();
-            response.setStatus(statusCode);
+        if(rst is RsData<*>) {
+            val statusCode = rst.statusCode
+            response.status = statusCode
         }
 
-        return rst; // json으로 변환되어 응답
+        return rst // json으로 변환되어 응답
     }
 
 }
