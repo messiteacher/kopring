@@ -325,7 +325,7 @@ class Ut {
     }
 
     object json {
-        private val objectMapper: ObjectMapper = AppConfig.objectMapper
+        private val objectMapper: ObjectMapper = AppConfig.getObjectMapper()
 
         @JvmStatic
         fun toString(obj: Any?): String {
