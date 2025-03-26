@@ -13,8 +13,11 @@ import org.springframework.core.io.ClassPathResource;
 @Configuration
 public class AppConfig {
 
-    @Getter
     public static ObjectMapper objectMapper;
+
+    public static ObjectMapper getObjectMapper() {
+        return objectMapper;
+    }
 
     public static String genFileDirPath;
 
