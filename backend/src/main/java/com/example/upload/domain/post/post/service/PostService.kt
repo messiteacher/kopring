@@ -31,11 +31,11 @@ class PostService(
         }
     }
 
-    fun getItems(): List<Post> {
+    fun getItems(): List<Post?> {
         return postRepository.findAll()
     }
 
-    fun getItem(id: Long): Optional<Post> {
+    fun getItem(id: Long): Optional<Post?> {
         return postRepository.findById(id)
     }
 
@@ -112,6 +112,6 @@ class PostService(
             "200-1",
             "${post.id}번 임시글을 불러옵니다.",
             post
-        );
+        )
     }
 }
