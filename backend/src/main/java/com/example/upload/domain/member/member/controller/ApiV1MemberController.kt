@@ -29,9 +29,9 @@ class ApiV1MemberController(
 
     @JvmRecord
     data class JoinReqBody(
-        @field:NotBlank val username: String?,
-        @field:NotBlank val password: String?,
-        @field:NotBlank val nickname: String?
+        @field:NotBlank val username: String,
+        @field:NotBlank val password: String,
+        @field:NotBlank val nickname: String
     )
 
     @Operation(summary = "회원 가입")
