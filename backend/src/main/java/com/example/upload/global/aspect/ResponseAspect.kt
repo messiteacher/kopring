@@ -1,12 +1,11 @@
 package com.example.upload.global.aspect;
 
-import com.example.upload.global.dto.RsData;
-import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
+import com.example.upload.global.dto.RsData
+import jakarta.servlet.http.HttpServletResponse
+import org.aspectj.lang.ProceedingJoinPoint
+import org.aspectj.lang.annotation.Around
+import org.aspectj.lang.annotation.Aspect
+import org.springframework.stereotype.Component
 
 @Aspect
 @Component
