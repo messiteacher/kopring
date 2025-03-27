@@ -44,7 +44,7 @@ class PostService(
     }
 
     fun delete(post: Post) {
-        postRepository.delete(post);
+        postRepository.delete(post)
     }
 
     @Transactional
